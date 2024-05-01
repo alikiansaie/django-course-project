@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+
 # Managers
 
 
@@ -18,6 +19,7 @@ class Post(models.Model):
         DRAFT = 'DR', 'Draft'
         PUBLISHED = 'PB', 'Published'
         REJECTED = 'RJ', 'Rejected'
+
     # relation
     author = models.ForeignKey(
         User,
@@ -62,6 +64,9 @@ class Post(models.Model):
         indexes = [
             models.Index(fields=['-publish'])
         ]
+
+        verbose_name = 'پست'
+        verbose_name_plural = 'پست ها'
 
     def __str__(self):
         return self.title
