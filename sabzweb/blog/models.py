@@ -25,21 +25,27 @@ class Post(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='user_posts',
+        verbose_name='نویسنده'
     )
     # data field
     title = models.CharField(
         max_length=250,
+        verbose_name='عنوان'
     )
 
-    description = models.TextField()
+    description = models.TextField(
+        verbose_name='توضیحات'
+    )
 
     slug = models.SlugField(
         max_length=250,
+        verbose_name='اسلاگ'
     )
 
     # Date
     publish = models.DateTimeField(
         default=timezone.now,
+        verbose_name='تاریخ انتشار'
     )
 
     created = models.DateTimeField(
@@ -54,6 +60,7 @@ class Post(models.Model):
         max_length=2,
         choices=Status.choices,
         default=Status.DRAFT,
+        verbose_name='وضعیت'
     )
 
     objects = models.Manager()
