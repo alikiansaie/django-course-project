@@ -64,7 +64,8 @@ class Post(models.Model):
         verbose_name='وضعیت'
     )
 
-    objects = models.Manager()
+    # objects = models.Manager()
+    objects = jmodels.jManager()
     published = PublishManager()
 
     class Meta:
