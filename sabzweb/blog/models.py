@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django_jalali.db import models as jmodels
 
 
 # Managers
@@ -43,16 +44,16 @@ class Post(models.Model):
     )
 
     # Date
-    publish = models.DateTimeField(
+    publish = jmodels.jDateTimeField(
         default=timezone.now,
         verbose_name='تاریخ انتشار'
     )
 
-    created = models.DateTimeField(
+    created = jmodels.jDateTimeField(
         auto_now_add=True,
     )
 
-    updated = models.DateTimeField(
+    updated = jmodels.jDateTimeField(
         auto_now=True,
     )
 
