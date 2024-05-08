@@ -1,4 +1,6 @@
-{% extends 'parent/Base.html' %}
+{% extends "parent/Base.html" %}
+{% load jformat %}
+
 {% block title%} Post details {% endblock %}
 
 {% block content %} 
@@ -6,5 +8,6 @@
 <h2>((  {{ post.title }}  )) by : {{ post.author }}</h2>
 <p>{{ post.description | linebreaks }}</p>
 <hr>
-<p> {{ post.publish }}</p>
+   <p> {{ post.publish | jformat:"%Y/%m--%H:%M" }}</p>
+{#<p>{{ new_date | date:'Y/m (H:i)'}}</p>#}
 {% endblock %} 

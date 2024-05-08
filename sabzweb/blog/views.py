@@ -17,7 +17,7 @@ def post_list(request):
     return render(request, "blog/list.html", context)
     # {'posts': posts}) => if its gets more than one you should make a dic var
 
-
+import datetime
 def post_detail(request, id):
     post = get_object_or_404(Post , id=id , status = Post.Status.PUBLISHED)
     # try:
@@ -26,6 +26,7 @@ def post_detail(request, id):
     #     raise Http404('Not Post Found !')
     context = {
         'post': post,
+        'new_date':datetime.datetime.now()
     }
     return render(request, "blog/detail.html", context)
 
