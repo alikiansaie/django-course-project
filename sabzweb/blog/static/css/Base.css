@@ -106,6 +106,7 @@ h3::before {
 }
 
 .pagination{
+    color: aliceblue;
     width: 350px;
     background-color: #a92424;
     color: aliceblue;
@@ -114,4 +115,8 @@ h3::before {
     border-radius: 10px;
     margin: 20px auto;
     padding: 10px;
+}
+
+#link{
+    color: aliceblue;
 }
