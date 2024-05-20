@@ -104,3 +104,14 @@ h3::before {
         margin-right: 1.5rem;
     }
 }
+
+.pagination{
+    width: 350px;
+    background-color: #a92424;
+    color: aliceblue;
+    text-align: center;
+    border-bottom: 5px solid #f19022;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px;
+}
